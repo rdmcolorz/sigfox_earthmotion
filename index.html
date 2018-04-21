@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<title>Test</title>
+</head>
+<body>
+<h1>Earthquake Data</h1>
+<img class="map" src="./img/mexico.png" alt="mexico">
+        
+<div id="sensor1" class="sensor1">1</div>
+<div id="sensor2" class="sensor2">2</div>
+<div id="sensor3" class="sensor3">3</div>
+<div id="sensor4" class="sensor4">4</div>
+<div id="sensor5" class="sensor5">5</div>
+<div id="sensor6" class="sensor6">6</div>
+<div id="sensor7" class="sensor7">7</div>
+<div id="sensor8" class="sensor8">8</div>
+<script>
+function set_color_by_id(id, sColor)
+{
+    var elem;
+    if (document.getElementById())
+    {
+        if (elem=document.getElementById(id))
+        {
+            if (elem.style)
+            {
+                elem.style.backgroundColor=sColor;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+set_color_by_id('sensor1', 'red');
+</script>
+</body>
+</html>

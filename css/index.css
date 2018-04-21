@@ -1,0 +1,78 @@
+.map {
+    height: 80%;
+    width: 80%;
+    position: relative;
+}
+
+.sensor1 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 250px;
+    top: -400px;
+}
+.sensor2 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 300px;
+    top: -450px;
+}
+.sensor3 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 500px;
+    top: -350px;
+}
+.sensor4 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 400px;
+    top: -450px;
+}
+.sensor5 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 350px;
+    top: -450px;
+}
+.sensor6 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 450px;
+    top: -300px;
+}
+.sensor7 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 400px;
+    top: -450px;
+}
+.sensor8 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 480px;
+    top: -420px;
+}
