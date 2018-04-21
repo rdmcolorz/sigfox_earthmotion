@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./css/index.css">
 <title>Test</title>
+<style>
+.map {
+    height: 80%;
+    width: 80%;
+    position: relative;
+}
+
+.sensor1 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 250px;
+    top: -400px;
+}
+.sensor2 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 300px;
+    top: -450px;
+}
+.sensor3 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 500px;
+    top: -350px;
+}
+.sensor4 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 400px;
+    top: -450px;
+}
+.sensor5 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 350px;
+    top: -450px;
+}
+.sensor6 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 450px;
+    top: -300px;
+}
+.sensor7 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 400px;
+    top: -450px;
+}
+.sensor8 {
+    height: 30px;
+    width: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    position: relative;
+    left: 480px;
+    top: -420px;
+}
+</style>
 </head>
 <body>
 <h1>Earthquake Data</h1>
-<img class="map" src="./img/mexico.png" alt="mexico">
+<img class="map" src="img/mexico.png" alt="mexico">
         
-<div id="sensor1" class="sensor1">1</div>
+<div id="magdata1" class="sensor1">1</div>
 <div id="sensor2" class="sensor2">2</div>
 <div id="sensor3" class="sensor3">3</div>
 <div id="sensor4" class="sensor4">4</div>
@@ -20,7 +99,7 @@
 function set_color_by_id(id, sColor)
 {
     var elem;
-    if (document.getElementById())
+    if (document.getElementById(id))
     {
         if (elem=document.getElementById(id))
         {

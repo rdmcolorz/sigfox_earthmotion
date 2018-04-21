@@ -1,26 +1,17 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-global.document = new JSDOM('index.html').window.document;
 var firebase = require("firebase");
+var express = require('express');
+var app = express();
+const http = require('http');
+const fs = require('fs');
+const hostname = '127.0.0.1';
+const port = 3000;
+var url = require('url');
 
-//signing in with google
-document.addEventListener("DOMContentLoaded", event => {
-    const app = firebase.app();
-});
-
-function googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    firebase.auth().signInWithPopup(provider)
-            .then(result => {
-                const user = result.user;
-                document.write('Hello ${user.displayName}');
-                console.log(user)
-            })
-            .catch(console.log)
-}
-//
-
+global.document = new JSDOM('index.html').window.document;
+app.use(express.static('css'));
+app.use(express.static('img'));
 
 var config = 
     {
@@ -33,19 +24,12 @@ var config =
     };
     firebase.initializeApp(config);
 
-const preObject = document.getElementById('sensor1');
-const sensor1 = firebase.database().ref().child('sensor1');
-const sensor2 = firebase.database().ref().child('sensor2');
-const sensor3 = firebase.database().ref().child('sensor3');
+var database = firebase.database();
+const mag1 = database.ref().child('sensor1').child('mag');
 
-sensor1.on('value', snap => console.log(snap.val()));
-sensor2.on('value', snap => console.log(snap.val()));
-sensor3.on('value', snap => console.log(snap.val()));
-
-const http = require('http');
-const fs = require('fs');
-const hostname = '127.0.0.1';
-const port = 3000;
+mag1.on('value', function(datasnapshot) {
+    mag1.innerText = datasnapshot.val();
+})
 
 function css(request, response) {
   if (request.url === '/index.css') {
@@ -64,6 +48,13 @@ fs.readFile('./index.html', (err, html) =>
     }
     const server = http.createServer((req, res) => 
     {
+        var request = url.parse(req.url, true);
+        var action = request.pathname;
+        if (action == 'img/mexico.png') {
+        var img = fs.readFileSync('./img/mexico.png');
+        res.writeHead(200, {'Content-Type': 'image/png' });
+        res.end(img, 'binary');
+        }
         res.statusCode = 200;
         res.setHeader('Content-type', 'text/html');
         res.write(html);
